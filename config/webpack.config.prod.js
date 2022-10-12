@@ -64,7 +64,8 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-                { from: 'public/assets', to: 'assets' },
+                { from: 'public/icons/static', to: 'assets' },
+                { from: 'public/icons/animated', to: 'assets' },
             ],
         }),
         new Dotenv(),
