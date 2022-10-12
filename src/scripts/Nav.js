@@ -95,14 +95,14 @@ class Nav {
     }
 
     addNewLocation(name) {
-        if (this.myLocations.length <= 8) {
+        if (this.myLocations.length < 8) {
             if (this.getLocationLocalStorage(name)) return;
             const shortName = name.slice(0, name.indexOf(','));
             this.setLocationLocalStorage(shortName, name);
             this.createNewLocation(shortName);
             setTimeout(() => search.closeAfterLocationPicked(), 200);
         } else {
-            alert('There is no space for another location')
+            alert('You have reached your locations limit')
         }
     }
 
