@@ -10,9 +10,6 @@ const GOOGLE_GEOLOCATION_LINK = 'https://maps.googleapis.com/maps/api/geocode/js
 const DEFAULT_LOCATION = 'Kraków, Poland';
 
 class App {
-    constructor() {
-        // window.addEventListener('DOMContentLoaded', () => this.init());
-    }
 
     init() {
         this.getGeolocation();
