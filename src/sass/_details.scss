@@ -1,0 +1,67 @@
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 95%;
+    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: $border-radius;
+    background-color: $header-background-color;
+    color: $main-font-color;
+
+    @include mq(xl) {
+        grid-area: details;
+        width: 95%;
+        height: 95%;
+        margin-bottom: 0;
+        @include position-center;
+    }
+
+    &__title {
+        font-size: 2.4rem;
+        font-weight: 600;
+    }
+
+    &__elements {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 12px;
+    }
+
+    &__element {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__element-icon {
+        width: 40px;
+        aspect-ratio: 1/1;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: invert(1);
+    }
+
+    &__element-sign {
+        padding: 4px;
+        font-size: 1.6rem;
+    }
+}
+
+.feelslike-icon {
+    background-image: url('../../public/icons/static/details-feelslike.svg');
+}
+
+.humidity-icon {
+    background-image: url('../../public/icons/static/details-humidity.svg');
+}
+
+.wind-icon {
+    background-image: url('../../public/icons/static/details-wind.svg');
+}
+
+.pressure-icon {
+    background-image: url('../../public/icons/static/details-pressure.svg');
+}

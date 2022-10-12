@@ -1,0 +1,20 @@
+$desktop-background: #666;
+$main-font-color: #fff;
+$primary-color: #0A1857;
+$header-background-color: rgba(10, 24, 87, 0.3);
+$search-main-color: #fff;
+
+$nav-font-color: #fff;
+$active-location-color: #FFA500;
+
+$border-radius: 6px;
+
+// MEDIA QUERIES BREAKPOINTS
+$breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);

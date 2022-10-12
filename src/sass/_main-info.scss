@@ -1,0 +1,81 @@
+.main-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+
+    @include mq(sm) {
+        height: 500px;
+    }
+
+    @include mq(lg) {
+        grid-area: main;
+    }
+
+    @media (orientation: landscape) {
+        @include mq(sm) {
+            height: 100vh;
+        }
+
+        @include mq(md) {
+            height: 500px;
+        }
+
+        @include mq(xl) {
+            width: 450px;
+            height: 100%;
+        }
+    }
+
+
+}
+
+.weather {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-shadow: -1px 0 $primary-color, 0 1px $primary-color, 1px 0 $primary-color, 0 -1px $primary-color;
+
+
+    &__icon {
+        width: 100px;
+        height: 100px;
+        background-image: url('../../public/icons/animated/rain-animated.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        // filter: invert(100);
+    }
+
+    &__temperature {
+        padding: 4px;
+        color: $main-font-color;
+        font-size: 12rem;
+        text-align: center;
+
+        @media (orientation: landscape) {
+            @include mq(sm) {
+                font-size: 9rem;
+            }
+
+            @include mq(md) {
+                font-size: 12rem;
+            }
+        }
+    }
+
+    &__details {
+        padding: 2px;
+        color: $main-font-color;
+        font-size: 3rem;
+    }
+
+    &__description {
+        padding: 10px;
+        color: $main-font-color;
+        font-size: 1.8rem;
+        text-align: center;
+    }
+}

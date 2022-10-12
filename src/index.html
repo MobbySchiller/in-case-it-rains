@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+    <title>In case it rains</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="nav" id="js-navigation">
+            <h2 class="nav__title">Your locations</h2>
+            <ul class="nav__locations" id="js-nav-locations-list">
+                <li class="nav__location nav__location--active">
+                    <span class="nav__location-pin fa-solid fa-location-dot"></span><span class="nav__location-name">Current
+                    Location</span>
+                </li>
+            </ul>
+            <div class="nav__buttons">
+                <button class="nav__button nav_button--add" type="button"
+                    id="js-nav-add-button"><span class="fa-solid fa-plus"></span> Add</button>
+                <button class="nav__button nav_button--remove" type="button"
+                    id="js-nav-remove-button"><span class="fa-solid fa-minus"></span> Remove</button>
+            </div>
+            <div class="nav__switch-unit">
+                <span class="nav__switch-unit-name">Celsius</span>
+                <div class="nav__switch-unit-button" id="js-nav-switch-button">
+                    <div class="nav__switch-unit-dot" id="js-nav-switch-button-dot"></div>
+                </div>
+                <span class="nav__switch-unit-name">Fahrenheit</span>
+            </div>
+        </nav>
+        <div class="search">
+            <div class="search__bar" id="js-search-bar">
+                <div class="input">
+                    <span class="input__icon fa-solid fa-magnifying-glass"></span>
+                    <input type="text" class="input__form" id="js-search-input" placeholder="Your location"
+                        maxlength="22">
+                    <span class="input__icon fa-solid fa-xmark" id="js-search-xmark"></span>
+                </div>
+            </div>
+            <ul class="search__results" id="js-search-results">
+            </ul>
+        </div>
+        <main class="app" id="js-application">
+            <section class="header" id="js-header">
+                <div class="header__hamburger-icon header__icon">
+                    <input class=" header__hamburger-input" type="checkbox" id="menu_checkbox">
+                    <label class="header__hamburger-label" for="menu_checkbox" id="js-hamburger-button">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </label>
+                </div>
+
+                <!-- </div> -->
+                <h1 class="header__location" id="js-weather-location">error</h1>
+                <div class="header__search-icon header__icon">
+                    <span class="fa-solid fa-magnifying-glass" id="js-search-button"></span>
+                </div>
+            </section>
+            <section class="main-info">
+                <div class="weather">
+                    <div class="weather__icon" id="js-weather-icon"></div>
+                    <p class="weather__temperature"><span id="js-weather-temp">error</span>&deg</p>
+                    <p class="weather__details">
+                        <span class="weather__details-temp" id="js-weather-temp-max">error</span>&deg /
+                        <span class="weather__details-temp" id="js-weather-temp-min">error</span>&deg
+                    </p>
+                    <div class="weather__description" id="js-weather-description"></div>
+
+                </div>
+            </section>
+            <section class="forecast">
+                <h2 class="forecast__title">Forecast</h2>
+                <div class="forecast__hourly">
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                    <div class="hour-forecast">
+                        <p class="hour-forecast__sign" data-hourly-hour></p>
+                        <div class="hour-forecast__icon" data-hourly-icon></div>
+                        <p class="hour-forecast__sign"><span data-hourly-temp></span> &deg</p>
+                    </div>
+                </div>
+                <div class="forecast__daily">
+                    <div class="day-forecast">
+                        <p class="day-forecast__sign" data-daily-day></p>
+                        <div class="day-forecast__icon" data-daily-icon></div>
+                        <p class="day-forecast__sign"><span data-daily-temp></span>&deg</p>
+                    </div>
+                    <div class="day-forecast">
+                        <p class="day-forecast__sign" data-daily-day></p>
+                        <div class="day-forecast__icon" data-daily-icon></div>
+                        <p class="day-forecast__sign"><span data-daily-temp></span>&deg</p>
+                    </div>
+                    <div class="day-forecast">
+                        <p class="day-forecast__sign" data-daily-day></p>
+                        <div class="day-forecast__icon" data-daily-icon></div>
+                        <p class="day-forecast__sign"><span data-daily-temp></span>&deg</p>
+                    </div>
+                    <div class="day-forecast">
+                        <p class="day-forecast__sign" data-daily-day></p>
+                        <div class="day-forecast__icon" data-daily-icon></div>
+                        <p class="day-forecast__sign"><span data-daily-temp></span>&deg</p>
+                    </div>
+                    <div class="day-forecast">
+                        <p class="day-forecast__sign" data-daily-day></p>
+                        <div class="day-forecast__icon" data-daily-icon></div>
+                        <p class="day-forecast__sign"><span data-daily-temp></span>&deg</p>
+                    </div>
+                    <div class="day-forecast">
+                        <p class="day-forecast__sign" data-daily-day></p>
+                        <div class="day-forecast__icon" data-daily-icon></div>
+                        <p class="day-forecast__sign"><span data-daily-temp></span>&deg</p>
+                    </div>
+                    <div class="day-forecast">
+                        <p class="day-forecast__sign" data-daily-day></p>
+                        <div class="day-forecast__icon" data-daily-icon></div>
+                        <p class="day-forecast__sign"><span data-daily-temp></span>&deg</p>
+                    </div>
+                </div>
+            </section>
+            <section class="details">
+                <h2 class="details__title">Details</h2>
+                <div class="details__elements">
+                    <div class="details__element">
+                        <div class="details__element-icon feelslike-icon"></div>
+                        <p class="details__element-sign">Feels like</p>
+                        <p class="details__element-sign"><span id="js-weather-feels-like"></span>&deg</p>
+                    </div>
+                    <div class="details__element">
+                        <div class="details__element-icon humidity-icon"></div>
+                        <p class="details__element-sign">Humidity</p>
+                        <p class="details__element-sign"><span id="js-weather-humidity"></span>%</p>
+                    </div>
+                    <div class="details__element">
+                        <div class="details__element-icon wind-icon"></div>
+                        <p class="details__element-sign">Wind speed</p>
+                        <p class="details__element-sign">
+                            <span id="js-weather-wind-speed"></span> <span id="js-weather-wind-speed-unit">km/h</span>
+                        </p>
+                    </div>
+                    <div class="details__element">
+                        <div class="details__element-icon pressure-icon"></div>
+                        <p class="details__element-sign">Pressure</p>
+                        <p class="details__element-sign"><span id="js-weather-pressure"></span> hPa
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <div class="background" id="js-background"></div>
+        </main>
+        <div class="spinner spinner--visible" id="js-spinner">
+            <div class="spinner__content"></div>
+        </div>
+    </div>
+</body>
+
+</html>

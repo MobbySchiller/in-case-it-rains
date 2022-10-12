@@ -1,0 +1,132 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: -240px;
+    width: 240px;
+    height: 100%;
+    padding: 20px;
+    background-color: $primary-color;
+    color: $nav-font-color;
+    z-index: 1000;
+    transition: left .3s;
+
+    @include mq(xl) {
+        left: 0;
+        grid-area: nav;
+    }
+
+    &--active {
+        left: 0;
+    }
+
+    &__title {
+        font-size: 2.4rem;
+        font-weight: 600;
+    }
+
+    &__locations {
+        margin-top: 24px;
+        font-size: 1.8rem;
+    }
+
+    &__location {
+        display: flex;
+        margin: 20px 0;
+        cursor: pointer;
+
+        &--active {
+            color: $active-location-color;
+        }
+    }
+
+    &__location-pin {
+        margin-right: 6px;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    &__button {
+        flex-basis: 48%;
+        padding: 12px 0;
+        border: 2px solid $main-font-color;
+        border-radius: $border-radius;
+        background-color: transparent;
+        color: $nav-font-color;
+        font-size: 1.6rem;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $nav-font-color;
+            color: $primary-color;
+        }
+    }
+
+    &__switch-unit {
+        position: absolute;
+        bottom: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__switch-unit-name {
+        padding: 0 6px;
+        font-size: 1.2rem;
+
+        &:nth-child(1) {
+            padding: 0 6px 0 24px;
+        }
+    }
+
+    &__switch-unit-button {
+        position: relative;
+        width: 60px;
+        height: 26px;
+        border-radius: 25px;
+        background-color: $active-location-color;
+        cursor: pointer;
+    }
+
+    &__switch-unit-dot {
+        position: absolute;
+        top: 50%;
+        left: 4px;
+        transform: translateY(-50%);
+        content: '';
+        display: block;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: $nav-font-color;
+        transition: left .3s;
+
+        &--active {
+            left: 36px;
+        }
+    }
+}
+
+.remove-button {
+    display: none;
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    margin-left: 5px;
+    box-shadow: 0 0 0 2px #f00;
+    border-radius: 50%;
+    color: #f00;
+    font-weight: 700;
+    line-height: 22px;
+    text-align: center;
+
+    &--active {
+        display: block;
+    }
+}

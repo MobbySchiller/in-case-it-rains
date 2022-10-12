@@ -1,0 +1,144 @@
+.forecast {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 95%;
+    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: $border-radius;
+    background-color: $header-background-color;
+    color: $main-font-color;
+
+    @include mq(xl) {
+        grid-area: forecast;
+        width: 95%;
+        height: 95%;
+        margin-bottom: 0;
+        @include position-center;
+    }
+
+    &__title {
+        font-size: 2.4rem;
+        font-weight: 600;
+    }
+
+    &__hourly {
+        display: flex;
+        flex-wrap: nowrap;
+        margin: 12px 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+
+        @include mq(lg) {
+            justify-content: center;
+        }
+
+        @include mq(xl) {
+            justify-content: flex-start;
+
+            &::-webkit-scrollbar {
+                width: 100%;
+                height: 6px;
+            }
+
+            &::-webkit-scrollbar-track {
+                border: 25px;
+                background: #f1f1f1;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: #aaa;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background: #999;
+            }
+        }
+    }
+
+    &__daily {
+        display: flex;
+        flex-direction: column;
+
+        @include mq(sm) {
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.hour-forecast {
+    margin-right: 12px;
+
+    @include mq(lg) {
+        margin-right: 16px;
+    }
+
+    @include mq(xl) {
+        margin-right: 12px;
+    }
+
+    &__sign {
+        display: block;
+        font-size: 1.4rem;
+        text-align: center;
+
+        @include mq(xl) {
+            font-size: 1.2rem;
+        }
+    }
+
+    &__icon {
+        width: 30px;
+        aspect-ratio: 1/1;
+        margin: 4px 0;
+        background-image: url(../../public/icons/static/clear-day.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: invert(1);
+    }
+}
+
+.day-forecast {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mq(sm) {
+        flex-basis: 42%;
+    }
+
+    &__icon {
+        width: 32px;
+        height: 32px;
+        background-image: url(../../public/icons/static/showers-day.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: invert(1);
+
+        @include mq(xl) {
+            width: 26px;
+            height: 26px;
+        }
+    }
+
+    &__sign {
+        font-size: 1.8rem;
+
+        @include mq(xl) {
+            font-size: 1.6rem;
+        }
+
+        &:nth-child(1) {
+            width: 100px;
+        }
+    }
+
+}
