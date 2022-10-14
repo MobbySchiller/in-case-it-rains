@@ -62,7 +62,7 @@ class Search {
     }
 
     async getAutocomplete(place) {
-        const link = `${GOOGLE_AUTOCOMPLETE_LINK}&input=${place}&key=${GOOGLE_API}`;
+        const link = `${CORS_ANYWHERE}${GOOGLE_AUTOCOMPLETE_LINK}&input=${place}&key=${GOOGLE_API}`;
         const response = await fetch(link);
         if (!response.ok) {
             const message = `An error has occured: ${response.status}`;

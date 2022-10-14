@@ -5,7 +5,7 @@ export const APPLICATION_ID = '#js-application';
 export const SPINNER_ID = '#js-spinner';
 
 export const GOOGLE_API = process.env.GOOGLE_API_KEY;
-// export const CORS_ANYWHERE = 'https://cors-anywhere.herokuapp.com/';
+export const CORS_ANYWHERE = 'https://cors-anywhere.herokuapp.com/';
 const GOOGLE_GEOLOCATION_LINK = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=';
 const DEFAULT_LOCATION = 'Kraków, Poland';
 
@@ -41,7 +41,7 @@ class App {
     async succeedGeolocated(position) {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
-        const link = `${GOOGLE_GEOLOCATION_LINK}${latitude},${longitude}&key=${GOOGLE_API}`
+        const link = `${CORS_ANYWHERE}${GOOGLE_GEOLOCATION_LINK}${latitude},${longitude}&key=${GOOGLE_API}`
         const response = await fetch(link);
         if (!response.ok) {
             const message = `An error has occured: ${response.status}`;

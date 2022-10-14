@@ -1,17 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
-html {
-    overflow: hidden;
-    width: 100%;
-}
-
-body {
-    height: 100%;
-    position: fixed;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-}
-
 html,
 body {
     background-color: $desktop-background;
