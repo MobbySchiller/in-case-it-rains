@@ -54,7 +54,7 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: 'src/index.html',
-            filename: '[name]-[contenthash:4].html',
+            filename: 'index.html',
             minify: {
                 collapseWhitespace: true,
             }

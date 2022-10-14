@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.config.dev.js",
     "dev": "webpack --config config/webpack.config.dev.js",
-    "prod": "webpack --config config/webpack.config.prod.js"
+    "prod": "webpack --config config/webpack.config.prod.js",
+    "mobile": "webpack-dev-server --config config/webpack.config.dev.js --host 0.0.0.0"
   },
   "keywords": [],
   "author": "",
