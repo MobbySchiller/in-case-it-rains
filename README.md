@@ -1,7 +1,8 @@
 # In Case It Rains
 Weather App
-
-
+```diff
+- CAUTION! To use app you need to open console, click link 'cors-anywhere.heroku...' and click "Request temporary access to the demo server". Then you can comeback and check the weather. That solution is due to lack of backend.
+```
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
